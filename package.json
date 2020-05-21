@@ -1,0 +1,24 @@
+{
+  "name": "manneh",
+  "version": "1.0.0",
+  "description": "Appointment Scheduler bot for fiverr client.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "Dialogflow",
+    "Calender"
+  ],
+  "author": "Raj Kapadia",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^3.2.1",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "google-auth-library": "^5.2.0",
+    "googleapis": "^42.0.0"
+  }
+}
