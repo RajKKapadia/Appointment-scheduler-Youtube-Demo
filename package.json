@@ -4,7 +4,8 @@
   "description": "Appointment Scheduler bot for fiverr client.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "Dialogflow",

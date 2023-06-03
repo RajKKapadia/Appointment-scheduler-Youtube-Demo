@@ -1,20 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-require('dotenv').config();
-
-const webApp = express();
-
-webApp.use(bodyParser.urlencoded({
-    extended: true
-}))
-
-webApp.use(bodyParser.json()); 
-
-const PORT = process.env.PORT;
-
-webApp.get('/', (req, res) => {
-    res.send(`Hello World.!`);
-});
+const router = express.Router();
 
 const ad = require('../helper-functions/airtable-database');
 const gc = require('../helper-functions/google-calender');
@@ -321,7 +306,7 @@ const rescheduleAppointment = async (req) => {
     return responseText;
 }
 
-webApp.post('/webhook', async (req, res) => {
+router.post('/', async (req, res) => {
 
     let action = req['body']['queryResult']['action'];
     let responseText = {};
@@ -336,6 +321,6 @@ webApp.post('/webhook', async (req, res) => {
     res.send(responseText);
 });
 
-webApp.listen(PORT, () => {
-    console.log(`Server is running at ${PORT}`);
-});
+module.exports = {
+    router
+};
